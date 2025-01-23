@@ -1,7 +1,8 @@
-import Board from "./Board.mjs";
 export default class {
-    constructor(board = new Board()) {
-        this.board = board;
-        this.position = [null,null];
-    }
+    moves = {
+        upLeft: [[-2,1],[-1,2]],
+        upRight: [[2,1],[1,2]],
+        downLeft: [[-2,-1],[-1,-2]],
+        downRight: [[2,-1],[1,-2]]
+    };
 }
