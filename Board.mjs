@@ -7,12 +7,7 @@ export default class {
                 this.squares[x].push({
                     coordinates: [x,y],
                     visited: false,
-                    moves: {
-                        upLeft: [],
-                        upRight: [],
-                        downLeft: [],
-                        downRight: []
-                    }
+                    moves: []
                 });
             }
         }
@@ -20,22 +15,21 @@ export default class {
         for (let x = 0; x < this.squares.length; x++) {
             for (let y = 0; y < this.squares[x].length; y++) {
                 if (this.squares[x-2] && this.squares[x-2][y+1])
-                this.squares[x][y].moves.upLeft.push([x-2,y+1]);
+                    this.squares[x][y].moves.push([x-2,y+1]);
                 if (this.squares[x-1] && this.squares[x-1][y+2])
-                    this.squares[x][y].moves.upLeft.push([x-1,y+2]);
+                    this.squares[x][y].moves.push([x-1,y+2]);
                 if (this.squares[x+2] && this.squares[x+2][y+1])
-                    this.squares[x][y].moves.upRight.push([x+2,y+1]);
+                    this.squares[x][y].moves.push([x+2,y+1]);
                 if (this.squares[x+1] && this.squares[x+1][y+2])
-                    this.squares[x][y].moves.upRight.push([x+1,y+2]);
+                    this.squares[x][y].moves.push([x+1,y+2]);
                 if (this.squares[x-2] && this.squares[x-2][y-1])
-                    this.squares[x][y].moves.downLeft.push([x-2,y-1]);
+                    this.squares[x][y].moves.push([x-2,y-1]);
                 if (this.squares[x-1] && this.squares[x-1][y-2])
-                    this.squares[x][y].moves.downLeft.push([x-1,y-2]);
+                    this.squares[x][y].moves.push([x-1,y-2]);
                 if (this.squares[x+2] && this.squares[x+2][y-1])
-                    this.squares[x][y].moves.downRight.push([x+2,y-1]);
+                    this.squares[x][y].moves.push([x+2,y-1]);
                 if (this.squares[x+1] && this.squares[x+1][y-2])
-                    this.squares[x][y].moves.downRight.push([x+1,y-2]);
-                // console.log(this.squares[x][y]);
+                    this.squares[x][y].moves.push([x+1,y-2]);
             }
         }
     }
